@@ -1,1 +1,22 @@
 <h2>Monitor</h2>
+
+<table>
+  <tr>
+    <th>Monitor Name</th>
+    <th>Time</th>
+    <th>Latency</th>
+    <th>Download Rate</th>
+    <th>Upload Rate</th>
+    <th>Error</th>
+  </tr>
+  <% @connection_tests.each do |connection_test| %>
+    <tr>
+      <td><%= connection_test.monitor_name %></td>
+      <td><%= connection_test.created_at %></td>
+      <td><%= connection_test.latency %></td>
+      <td><%= connection_test.download_rate %></td>
+      <td><%= connection_test.upload_rate %></td>
+      <td><%= connection_test.error %></td>
+    </tr>
+  <% end %>
+</table>

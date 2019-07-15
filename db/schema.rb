@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_20_012123) do
+ActiveRecord::Schema.define(version: 2019_07_15_024537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "connection_tests", force: :cascade do |t|
+    t.string "server"
+    t.float "latency"
+    t.float "download_rate"
+    t.float "upload_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "monitor_name"
+    t.string "error"
+    t.text "backtrace"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
